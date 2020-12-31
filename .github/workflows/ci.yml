@@ -28,7 +28,7 @@ jobs:
           uses: peaceiris/actions-gh-pages@v3.6.1
           with:
             github_token: ${{ secrets.PUBLISH_TOKEN }}
-            publish_branch: GHPages
+            publish_branch: gh-pages
             publish_dir: DrakeDataNew/bin/Release/netstandard2.1/publish/wwwroot
             #publish_dir: home/runner/work/DrakeDataNew/DrakeDataNew/DrakeDataNew/bin/Release/netstandard2.1/publish/wwwroot
             allow_empty_commit: false
