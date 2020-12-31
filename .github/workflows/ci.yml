@@ -36,3 +36,9 @@ jobs:
             force_orphan: true
             # TODO uncomment the following line if you have a custom domain name
             # cname: demo.meziantou.net
+
+        # Generate the website
+        - name: Publish
+          run: |
+            cp wwwroot/index.html wwwroot/404.html
+            dotnet publish DrakeDataNew/DrakeDataNew.csproj --configuration Release
