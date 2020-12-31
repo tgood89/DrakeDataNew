@@ -20,17 +20,16 @@ jobs:
 
         # Generate the website
         - name: Publish
-          run: dotnet publish DrakeDataNew.csproj --configuration Release
+          run: dotnet publish DrakeDataNew/DrakeDataNew.csproj --configuration Release
 
         # Publish the website
         - name: GitHub Pages action
           #if: ${{ github.ref == 'refs/heads/master' }} # Publish only when the push is on master
-          
           uses: peaceiris/actions-gh-pages@v3.6.1
           with:
             github_token: ${{ secrets.PUBLISH_TOKEN }}
             publish_branch: GHPages
-            publish_dir: bin/Release/netstandard2.1/publish/wwwroot
+            #publish_dir: bin/Release/netstandard2.1/publish/wwwroot
             #publish_dir: home/runner/work/DrakeDataNew/DrakeDataNew/DrakeDataNew/bin/Release/netstandard2.1/publish/wwwroot
             allow_empty_commit: false
             keep_files: false
